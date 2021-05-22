@@ -1,0 +1,275 @@
+{
+	"info": {
+		"_postman_id": "463d69a3-28fa-418f-bba8-8d832798c280",
+		"name": "Tarjetas de Credito",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Servicio de autenticación",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "Basic U29uaWE6MTIzNDU="
+				},
+				"url": {
+					"raw": "localhost:8080/api/autorizacion/validar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"autorizacion",
+						"validar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consutar Cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Sonia",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/clientes/encontrarPorIdentificacion/CC/1069716479",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"encontrarPorIdentificacion",
+						"CC",
+						"1069716479"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tarjetas por cliente",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Sonia",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/encontrarPorIdentificacion/CC/1069716479",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"encontrarPorIdentificacion",
+						"CC",
+						"1069716479"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar tarjetas por numero de tarjeta",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Sonia",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/encontrarPorTarjeta/4882125632161233",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"encontrarPorTarjeta",
+						"4882125632161233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar y actualizar cliente",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Sonia",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tipoIdentificacion\": \"CC\",\n\t\"identificacion\": \"123456\",\n\t\"nombre\": \"Pedro Perez Ficticio\",\n\t\"direccion\": \"Calle 15\",\n\t\"telefono\": \"3114546600\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/clientes/guardar",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clientes",
+						"guardar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar y actualizar tarjeta de credito",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "Sonia",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"idTarjeta\": \"4\",\n\t\"numeroTarjeta\": \"123456789000\",\n\t\"tipo\": \"AMEX\",\n\t\"fechaVencimiento\": \"12/23\",\n\t\"cvv\": \"567\"\n}"
+				},
+				"url": {
+					"raw": "localhost:8080/api/tarjetas/guardar/CC/1069716479",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"tarjetas",
+						"guardar",
+						"CC",
+						"1069716479"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
